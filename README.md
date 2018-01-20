@@ -4,3 +4,5 @@ java -Dlog4j.configuration="file:src/main/resources/log4j.xml" -cp target/uber-s
 
 # To run SimpleSalesAggregator:
 java -Dlog4j.configuration="file:src/main/resources/log4j.xml" -cp target/uber-simplesparkprog-1.0-SNAPSHOT.jar com.dhee.SimpleSalesAggregator
+
+SimpleSalesAggregator reads data in data/somegeneratedData.csv, and produces aggregated data as in results.txt on your console. 
