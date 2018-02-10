@@ -21,11 +21,14 @@ object SimpleSalesAggregator {
 
   def main(args: Array[String]) {
     val sc = SparkSession
-    .builder.master("local[2]")
+    .builder
+      //.master("local[2]")
     .appName("Simple Sales Aggregator")
     .getOrCreate().sparkContext
 
-    val lines = sc.textFile("data/somegeneratedData.csv")
+    val dataFileFullPath = args(0)
+    //val lines = sc.textFile("hdfs:/data/somegeneratedData.csv")
+    val lines = sc.textFile(dataFileFullPath)
     println("Total number of Lines: " + lines.count())
 
     val lineLengths = lines.map(s => s.length)
